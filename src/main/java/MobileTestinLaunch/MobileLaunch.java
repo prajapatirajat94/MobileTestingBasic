@@ -28,6 +28,13 @@ public class MobileLaunch {
 //				.withIPAddress("127.0.0.1").usingPort(4723).build();
 //		service.start();
 
+		/*
+		 * below Parameter we have to pass in Appium Inspector "appium:platformName":
+		 * "android", "appium:app":
+		 * "//Users//rajatkumarprajapati//eclipse-workspace//MobileTestingBasic//src//main//java//resource//ApiDemos-debug.apk",
+		 * "appium:deviceName": "RajatPhone", "appium:automationName": "UIAutomator2"
+		 */
+
 		// below codes are to start browser or app
 		UiAutomator2Options options = new UiAutomator2Options();
 		// device name give below
