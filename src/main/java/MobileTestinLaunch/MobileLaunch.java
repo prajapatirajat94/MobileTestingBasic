@@ -5,9 +5,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
-
+import org.openqa.selenium.remote.RemoteWebElement;
+import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
@@ -38,17 +42,23 @@ public class MobileLaunch {
 		//below codes are to start browser or app 
 		UiAutomator2Options options = new UiAutomator2Options();
 		// device name give below
-		options.setDeviceName("Pixel 3 XL");
+		options.setUdid("emulator-5554");
+		//options.setDeviceName("Pixel 3 XL");
 		//give the path where app is stored
 		options.setApp("C:\\Users\\praja\\eclipse-workspace\\MobileTesting\\src\\main\\java\\resource\\ApiDemos-debug.apk");
 		
-		AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), options);
+		AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 		
 		//appium supports on ly id, accessibilty id, classname,androidUIAutomator
 		//x path -> By.xpath or AppiumBy.xpath
-		driver.findElement(By.xpath("//android.widget.TextView[@content-desc=\"Animation\"]")).click();
+		driver.findElement(By.xpath("//android.widget.TextView[@content-desc='Animation']")).click();
 		
 		//driver.findElement(AppiumBy.accessibilityId("")).click();
+		WebElement element=driver.findElement(AppiumBy.accessibilityId("Cloning"));
+		// Java
+		((JavascriptExecutor) driver).executeScript("mobile: longClickGesture", ImmutableMap.of(
+		    "elementId", ((RemoteWebElement) element).getId()
+		));
 		
 		Thread.sleep(10000);
 		driver.quit();
