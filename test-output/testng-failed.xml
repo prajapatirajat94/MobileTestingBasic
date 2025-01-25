@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="MobileTestinLaunch.MobileLaunch">
+      <class name="MobileTestinLaunch.MobileLaunchLongPressGesture">
         <methods>
-          <include name="MobileTest"/>
+          <include name="initiate_Appium"/>
+          <include name="LongPressGestureDemo"/>
         </methods>
-      </class> <!-- MobileTestinLaunch.MobileLaunch -->
+      </class> <!-- MobileTestinLaunch.MobileLaunchLongPressGesture -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -7,24 +7,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
+import org.testng.annotations.Test;
 
 import com.google.common.collect.ImmutableMap;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 
-public class MobileLaunchLongPressGesture {
+public class MobileLaunchLongPressGesture extends BaseTest {
 
-	public static void main(String[]args) throws MalformedURLException {
+	@Test
+	public void LongPressGesture () throws MalformedURLException {
 		
-		UiAutomator2Options options = new UiAutomator2Options();
-		// device name give below
-		options.setUdid("emulator-5554");
-		//options.setDeviceName("Pixel 3 XL");
-		//give the path where app is stored
-		options.setApp("C:\\Users\\praja\\eclipse-workspace\\MobileTesting\\src\\main\\java\\resource\\ApiDemos-debug.apk");
-		
-		AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
 		
 		
 		driver.findElement(By.xpath("//android.widget.TextView[@content-desc='Views']")).click();
@@ -44,7 +38,7 @@ public class MobileLaunchLongPressGesture {
 	
 	JavascriptExecutor js = (JavascriptExecutor)driver;
 	
-	js.executeScript("mobile:LongClickGesture", ImmutableMap.of("elementId",((RemoteWebElement)element).getId()));
+	//js.executeScript("mobile:LongClickGesture", ImmutableMap.of("elementId",((RemoteWebElement)element).getId()));
 	}
 	
 	
