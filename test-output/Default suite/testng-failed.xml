@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="MobileTestinLaunch.MobileLaunchLongPressGesture">
+      <class name="IOSUtil.IosLongTouch">
         <methods>
-          <include name="initiate_Appium"/>
-          <include name="LongPressGestureDemo"/>
+          <include name="tearDown"/>
+          <include name="IosInitiateDriver"/>
+          <include name="LongTouchIos"/>
         </methods>
-      </class> <!-- MobileTestinLaunch.MobileLaunchLongPressGesture -->
+      </class> <!-- IOSUtil.IosLongTouch -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

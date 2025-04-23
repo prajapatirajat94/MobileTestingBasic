@@ -1,4 +1,4 @@
-package MobileTestinLaunch;
+package IOSUtil;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -19,7 +19,7 @@ public class IosLaunchBaseTest {
 		XCUITestOptions options = new XCUITestOptions();
 		options.setDeviceName("iPhone 16 Pro");
 		options.setApp("/Users/rajatkumarprajapati/Documents/UIKitCatalog.app");
-		options.setPlatformVersion("18.2");
+		// options.setPlatformVersion("18.2");
 		// Appium--WebDriver Agent -> IOS Apps
 		options.setWdaLaunchTimeout(Duration.ofSeconds(20));
 
